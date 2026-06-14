@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   
+
+   
+
+    <div class="ttt-wrapper">
+        <h2>Tic Tac Toe</h2>
+        <div class="mode-toggle">
+            <button id="btn-1p" class="mode-btn active" onclick="setMode('1p')">1 Player</button>
+            <button id="btn-2p" class="mode-btn" onclick="setMode('2p')">2 Players</button>
+        </div>
+        <p id="ttt-status">Your turn (X)</p>
+        <div class="ttt-board" id="ttt-board">
+            <div class="cell" onclick="tttClick(0)"></div>
+            <div class="cell" onclick="tttClick(1)"></div>
+            <div class="cell" onclick="tttClick(2)"></div>
+            <div class="cell" onclick="tttClick(3)"></div>
+            <div class="cell" onclick="tttClick(4)"></div>
+            <div class="cell" onclick="tttClick(5)"></div>
+            <div class="cell" onclick="tttClick(6)"></div>
+            <div class="cell" onclick="tttClick(7)"></div>
+            <div class="cell" onclick="tttClick(8)"></div>
+        </div>
+        <br>
+        <button class="reset-btn" onclick="tttReset()" title="Reset">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+            </svg>
+        </button>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Bulb */
+.bulb-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    user-select: none;
+}
+.bulb-container:hover svg {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+/* Tic Tac Toe */
+.ttt-wrapper {
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 24px;
+}
+.ttt-board {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 6px;
+    margin-top: 12px;
+}
+.cell {
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 48px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.cell:hover {
+    background: #e0e0e0;
+}
+.cell.x { color: #3498db; }
+.cell.o { color: #27ae60; }
+.cell.win { background: #d4edda; }
+
+/* Mode toggle */
+.mode-toggle {
+    display: inline-flex;
+    background: #e8e8e8;
+    border-radius: 24px;
+    padding: 4px;
+    margin-bottom: 14px;
+}
+.mode-btn {
+    padding: 7px 22px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    color: #777;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.mode-btn.active {
+    background: white;
+    color: #333;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+}
+
+/* Reset button */
+.reset-btn {
+    margin-top: 18px;
+    padding: 10px 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+.reset-btn:hover {
+    background: #e8e8e8;
+    transform: rotate(20deg);
+}
+
+/* Glassmorphism wave flash */
+.wave {
+    position: fixed;
+    z-index: 0;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: waveExpand 0.9s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.wave-x {
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.55) 0%, rgba(52, 152, 219, 0.25) 45%, transparent 70%);
+}
+.wave-o {
+    background: radial-gradient(circle, rgba(39, 174, 96, 0.55) 0%, rgba(39, 174, 96, 0.25) 45%, transparent 70%);
+}
+@keyframes waveExpand {
+    0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    65%  { opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
